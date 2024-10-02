@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan My Trip</title>
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Plan My Trip</h1>
+    </header>
+
+    <div class="container">
+        <form action="submit-trip.html" method="GET">
+            <label for="destination">Destination</label>
+            <input type="text" id="destination" name="destination" placeholder="Enter your destination" required>
+
+            <label for="start-date">Start Date</label>
+            <input type="date" id="start-date" name="start-date" required>
+
+            <label for="end-date">End Date</label>
+            <input type="date" id="end-date" name="end-date" required>
+
+            <label for="travel-preferences">Travel Preferences</label>
+            <select id="travel-preferences" name="travel-preferences">
+                <option value="adventure">Adventure</option>
+                <option value="relaxation">Relaxation</option>
+                <option value="sightseeing">Sightseeing</option>
+                <option value="culture">Culture</option>
+            </select>
+
+            <input type="submit" value="Plan My Trip">
+        </form>
+    </div>
+</body>
+</html>

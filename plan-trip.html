@@ -3,83 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plan My Trip</title>
-    <!-- Internal CSS -->
+    <title>Plan Your Trip | Explore India</title>
+    <link rel="stylesheet" href="planMyTrip.css">
     <style>
+        /* Additional styles for the Plan Your Trip section */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
             margin: 0;
             padding: 0;
         }
+
         header {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #FF6F61;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 1rem;
         }
-        h1 {
+
+        header h1 {
             margin: 0;
+            font-size: 2.5rem;
+            font-family: 'Georgia', serif;
         }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .trip-planner {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        label {
+
+        .trip-planner h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .form-section {
+            margin: 1.5rem 0;
+        }
+
+        .form-section label {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
             display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+            color: #555;
         }
-        input[type="text"], input[type="date"], select {
+
+        .form-section select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 0.8rem;
+            font-size: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
         }
-        input[type="submit"] {
-            background-color: #4CAF50;
+
+        button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #FF6F61;
             color: white;
-            padding: 10px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 1rem;
             cursor: pointer;
-            font-size: 16px;
+            margin-top: 1rem;
+            text-align: center;
         }
-        input[type="submit"]:hover {
-            background-color: #45a049;
+
+        button:hover {
+            background-color: #e55a50;
+        }
+
+        .itinerary {
+            margin-top: 2rem;
+        }
+
+        .itinerary h3 {
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .itinerary ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .itinerary ul li {
+            padding: 0.5rem 0;
+            font-size: 1.1rem;
+            background-color: #f7f7f7;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            color: #555;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Plan My Trip</h1>
+        <h1>Explore India - Plan Your Trip</h1>
     </header>
 
-    <div class="container">
-        <form action="submit-trip.html" method="GET">
-            <label for="destination">Destination</label>
-            <input type="text" id="destination" name="destination" placeholder="Enter your destination" required>
+    <section class="trip-planner">
+        <h2>Select Your Travel Preferences</h2>
 
-            <label for="start-date">Start Date</label>
-            <input type="date" id="start-date" name="start-date" required>
-
-            <label for="end-date">End Date</label>
-            <input type="date" id="end-date" name="end-date" required>
-
-            <label for="travel-preferences">Travel Preferences</label>
-            <select id="travel-preferences" name="travel-preferences">
-                <option value="adventure">Adventure</option>
-                <option value="relaxation">Relaxation</option>
-                <option value="sightseeing">Sightseeing</option>
-                <option value="culture">Culture</option>
+        <div class="form-section">
+            <label for="stateSelect">Choose a State:</label>
+            <select id="stateSelect">
+                <option value="">Select a State</option>
+                <option value="AndhraPradesh">Andhra Pradesh</option>
+                <option value="ArunachalPradesh">Arunachal Pradesh</option>
+                <option value="Assam">Assam</option>
+                <option value="Bihar">Bihar</option>
+                <option value="Chhattisgarh">Chhattisgarh</option>
+                <option value="Goa">Goa</option>
+                <option value="Gujarat">Gujarat</option>
+                <option value="Haryana">Haryana</option>
+                <option value="HimachalPradesh">Himachal Pradesh</option>
+                <option value="Jharkhand">Jharkhand</option>
+                <option value="Karnataka">Karnataka</option>
+                <option value="Kerala">Kerala</option>
+                <option value="MadhyaPradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Manipur">Manipur</option>
+                <option value="Meghalaya">Meghalaya</option>
+                <option value="Mizoram">Mizoram</option>
+                <option value="Nagaland">Nagaland</option>
+                <option value="Odisha">Odisha</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Rajasthan">Rajasthan</option>
+                <option value="Sikkim">Sikkim</option>
+                <option value="TamilNadu">Tamil Nadu</option>
+                <option value="Telangana">Telangana</option>
+                <option value="Tripura">Tripura</option>
+                <option value="UttarPradesh">Uttar Pradesh</option>
+                <option value="Uttarakhand">Uttarakhand</option>
+                <option value="WestBengal">West Bengal</option>
+                <option value="JammuKashmir">Jammu & Kashmir</option>
+                <option value="Ladakh">Ladakh</option>
+                <option value="AndamanNicobar">Andaman & Nicobar Islands</option>
+                <option value="Lakshadweep">Lakshadweep</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Puducherry">Puducherry</option>
             </select>
+        </div>
 
-            <input type="submit" value="Plan My Trip">
-        </form>
-    </div>
+        <div class="form-section">
+            <label for="placesSelect">Choose Places to Visit (Tourist Places & Hidden Gems):</label>
+            <select id="placesSelect" multiple>
+                <!-- Places will be dynamically populated based on the selected state and city -->
+            </select>
+        </div>
+
+        <button onclick="addToItinerary()">Add to Itinerary</button>
+
+        <div class="itinerary">
+            <h3>Your Itinerary:</h3>
+            <ul id="itineraryList"></ul>
+        </div>
+    </section>
+
+    <script src="planMyTrip.js"></script>
 </body>
 </html>

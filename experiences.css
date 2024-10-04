@@ -1,0 +1,112 @@
+ /* General Styles */
+ body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.heading img {
+    width: 100%; /* Full width of the screen */
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Row for the cards */
+.experience-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 20px;
+}
+
+/* Each card */
+.experience-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    width: 45%; /* Two cards per row */
+    height: 300px; /* Set a fixed height for the card */
+    margin: 10px 0;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* Heading overlay */
+.experience-card h3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+/* Background image opacity for hover effect */
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+/* Hidden description */
+.experience-card p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #fff;
+    text-align: center;
+    max-width: 80%;
+    z-index: 2;
+}
+
+/* Hover effect: show description, change overlay */
+.experience-card:hover::before {
+    opacity: 0.3;
+}
+
+.experience-card:hover p {
+    opacity: 1;
+}
+
+/* Hover zoom effect */
+.experience-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust card layout for smaller screens */
+@media screen and (max-width: 768px) {
+    .experience-card {
+        width: 100%; /* One card per row on small screens */
+        height: 250px; /* Adjust height for mobile */
+    }
+}
